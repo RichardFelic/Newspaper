@@ -1,0 +1,22 @@
+{% extends 'sistnews/home.html' %}
+{% block content %}
+<div class="row mb-2">
+{% for i in noticia %}
+  <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">{{i.clasificacion}}</strong>
+          <h3 class="mb-0">{{i.titular}}</h3>
+          <div class="mb-1 text-muted">{{i.fecha}}</div>
+          <p class="mb-auto">{{i.subtitulo}}</p>
+          <a href="/noticiapublico/{{i.id}}" class="stretched-link">Continue reading</a>
+        </div>
+        {% if i.imagen %}
+        <div class="col-auto d-none d-lg-block">
+          <img class="bd-placeholder-img " width="250" height="250" src="{{ i.imagen.url }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+{% endfor %}</div>
+{% endblock %}

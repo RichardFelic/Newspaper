@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-body">
+        <h6 class="opacity-50">{{noticia.epigrafe}}</h6>
+        <h1 class="fs-1 fw-bold">{{noticia.titular}}</h1>
+        <h5 class="fst-italic">{{noticia.subtitulo}}</h5><br>
+        <div class="d-flex">
+        <h6> {{noticia.createdBy}} </h6> <p class="fst-italic"> - {{noticia.fecha}}</p></div>
+        <hr> 
+     
+        {% if noticia.imagen %}
+        <img class="img-fluid img-thumbnail  rounded mx-auto d-block" src="{{noticia.imagen.url}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+        {% endif %}
+        <br>
+        <h6 class="opacity-50 text-center">{{noticia.piefoto}}</h6>
+        <hr>
+      <p class="fs-5 text-justify"> {{noticia.cuerpo}} </p>
+    </div>
+  </div>

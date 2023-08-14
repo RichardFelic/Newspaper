@@ -1,0 +1,11 @@
+{% extends 'sistnews/tablero.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form  enctype="multipart/form-data" method="POST" id="upload-image-form"> 
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'clasificacion' %}" type="button" class="btn btn-danger">Cancelar</a>
+        <button class="btn btn-success" type="submit">Agregar</button>
+    </form>
+{% endblock %}

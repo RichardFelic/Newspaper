@@ -1,0 +1,9 @@
+{% extends 'sistnews/tablero.html' %}
+{% block content %}
+    <form method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        {{form.as_p}}
+        <a href="{% url 'clasificacion' %}" type="button" class="btn btn-danger">Cancelar</a>
+        <button class="btn btn-success" type="submit">Actualizar</button>
+    </form>
+{% endblock %}

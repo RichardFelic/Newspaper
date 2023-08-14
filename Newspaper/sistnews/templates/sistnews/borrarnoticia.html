@@ -1,0 +1,32 @@
+{% extends 'sistnews/tablero.html' %}
+
+{% block content %}
+
+<div class="card col-md-8 offset-md-2">
+    <div class="card-header text-center bg-danger text-white">
+     <h3>Borrar Noticia</h3>
+    </div>
+    <div class="card-body  ">
+
+        <div class="container col-md-7 col-lg-11">
+            <br>
+            <table  class="table table-light table-bordered  table-sm w-100" >
+            <tr class="text-center ">
+
+            
+            <p class="text-center"><strong>¿Estás seguro que quieres borrar registro #{{noticia.id}}?</strong> </p>
+        
+    </div>
+    <hr>
+            <form  method="POST"> 
+                {% csrf_token %}
+                <div class="modal-footer">
+                <div class="bd-example">
+                <a href="{% url 'noticia' %}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-success">Confirmar</button>
+            </div>
+        </div>
+            </form>   
+    </div>
+  </div>
+{% endblock %}

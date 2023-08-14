@@ -1,0 +1,39 @@
+{% extends 'sistnews/tablero.html' %}
+{% block content %}
+<h1>Mis Noticias</h1>
+<hr>
+
+<a href="{% url 'registrarNoticia' %}" class="btn btn-success">Crear Nueva Noticia</a>
+<br><br>
+<table class="table table-responsive"  id="table_id">
+    <thead >
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Epígrafe</th>
+        <th scope="col">Titular</th>
+        <th scope="col">Subtítulo</th>
+        <th scope="col">Clasificación</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    {% for i in noticia %}
+      <tr class="text-center">
+        <th> {{i.id}} </th>
+        <td> {{i.epigrafe}} </td>
+        <td> {{i.titular}} </td>
+        <td> {{i.subtitulo}} </td>
+        <td> {{i.clasificacion}} </td>
+        <td>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <a href="/detalleNoticia/{{i.id}}" class="btn btn-primary">Detalles</a>
+                <a href="/editarNoticia/{{i.id}}" class="btn btn-warning text-white">Editar</a>
+                <a href="/borrarNoticia/{{i.id}}" class="btn btn-danger">Borrar</a>
+              </div>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
